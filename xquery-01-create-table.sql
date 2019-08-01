@@ -31,7 +31,10 @@ select
 from openrowset
 (
     bulk 'C:\Temp\books.xml', single_blob
-) t
+) t 
+-- use "t" to avoid error: 
+--  A correlation name must be specified for the bulk rowset in the from clause.
+-- 
 
 select *
 from testxquery01
